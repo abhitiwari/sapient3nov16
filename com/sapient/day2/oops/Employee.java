@@ -1,9 +1,9 @@
 package com.sapient.day2.oops;
 
 public class Employee {
-	private int id;
-	private String name;
-	private double salary;
+	protected int id;
+	protected String name;
+	protected double salary;
 	
 	/*public void setSalary(double salary){
 		if(salary>0){
@@ -31,11 +31,29 @@ public class Employee {
 			this.salary = salary;
 		}
 	}
-	public Employee(int id, String name, double salary) {
-		super();
+	
+	
+	public Employee(int id, String name) {
+//		super();
 		this.id = id;
 		this.name = name;
+		
+	}
+	
+	public Employee(int id, String name, double salary) {
+		this(id, name);
+		/*this.id = id;
+		this.name = name;*/
 		this.salary = salary;
+	}
+	
+	public void incrementSalary(){
+		this.salary *=1.1;
+	}
+	
+	public String toString(String className){
+		return className + " [id=" + id + ", name=" + name + ", salary="
+				+ salary + "]";
 	}
 	@Override
 	public String toString() {
