@@ -7,7 +7,7 @@ public class EmployeeTest {
 		System.out.println(emp);
 		
 //		emp.salary = -34545;
-		emp.setSalary(-24354);
+		//emp.setSalary(-24354);
 		
 		System.out.println(emp);
 

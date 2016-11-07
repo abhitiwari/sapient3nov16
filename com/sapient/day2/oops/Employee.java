@@ -1,9 +1,9 @@
 package com.sapient.day2.oops;
 
-public class Employee {
-	protected int id;
+public class Employee implements Comparable {
+	protected Integer id;
 	protected String name;
-	protected double salary;
+	protected Double salary;
 	
 	/*public void setSalary(double salary){
 		if(salary>0){
@@ -14,6 +14,20 @@ public class Employee {
 	public int getId() {
 		return id;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -23,10 +37,10 @@ public class Employee {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public double getSalary() {
+	public Double getSalary() {
 		return salary;
 	}
-	public void setSalary(double salary) {
+	public void setSalary(Double salary) {
 		if(salary>0){
 			this.salary = salary;
 		}
@@ -58,6 +72,21 @@ public class Employee {
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]";
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		Employee emp = (Employee) o;
+		return this.id.compareTo(emp.id);
+		/*if(this.id > emp.id){
+			return 1;
+		}
+		else if(this.id < emp.id){
+			return -1;
+		}
+		else{
+			return 0;
+		}*/
 	}
 	
 	
